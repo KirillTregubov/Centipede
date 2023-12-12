@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6qmog2xj50kk"
+path="res://.godot/imported/1996 Game Gear BGM #03.mp3-3f43f87e708db0a8633af11cc6377be9.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/1996 Game Gear BGM #03.mp3"
+dest_files=["res://.godot/imported/1996 Game Gear BGM #03.mp3-3f43f87e708db0a8633af11cc6377be9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

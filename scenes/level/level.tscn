@@ -1,52 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://xu8645aeqbpe"]
+[gd_scene load_steps=3 format=3 uid="uid://xu8645aeqbpe"]
 
-[ext_resource type="FontFile" uid="uid://bw1qxndkgn2l4" path="res://assets/EquipmentPro.woff" id="1_mbmm0"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_em6vc"]
-size = Vector2(24, 24)
-
-[sub_resource type="Theme" id="Theme_pb0ql"]
-default_font = ExtResource("1_mbmm0")
-default_font_size = 24
+[ext_resource type="PackedScene" uid="uid://b7b068nha1hmy" path="res://scenes/control.tscn" id="1_2k35c"]
+[ext_resource type="Texture2D" uid="uid://b4b038rl1xctp" path="res://assets/art/bugblaster.png" id="1_p4tif"]
 
 [node name="Level" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 219.0
-offset_top = 226.0
-offset_right = 274.0
-offset_bottom = 249.0
-text = "in level
-"
-
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(255, 467)
+position = Vector2(255, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-1, 2)
-texture = SubResource("PlaceholderTexture2D_em6vc")
+texture = ExtResource("1_p4tif")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="Score" type="Label" parent="Control/MarginContainer"]
-layout_mode = 2
-theme = SubResource("Theme_pb0ql")
-theme_override_font_sizes/font_size = 48
-text = "0000"
+[node name="Control" parent="." instance=ExtResource("1_2k35c")]

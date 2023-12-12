@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://pb8alr1dib1w"]
 
-[ext_resource type="FontFile" uid="uid://bw1qxndkgn2l4" path="res://assets/EquipmentPro.woff" id="1_1hrp4"]
 [ext_resource type="Script" path="res://scenes/start/start.gd" id="1_6c1n8"]
 [ext_resource type="Script" path="res://scenes/start/FlashingLabel.gd" id="2_nm2pk"]
-[ext_resource type="AudioStream" uid="uid://c6qmog2xj50kk" path="res://assets/1996 Game Gear BGM #03.mp3" id="3_ykf7h"]
+[ext_resource type="FontFile" uid="uid://bw1qxndkgn2l4" path="res://assets/fonts/EquipmentPro.woff" id="2_pwdki"]
+[ext_resource type="AudioStream" uid="uid://c6qmog2xj50kk" path="res://assets/sounds/1996 Game Gear BGM #03.mp3" id="4_2svgn"]
 
 [sub_resource type="Theme" id="Theme_t5lr5"]
-default_font = ExtResource("1_1hrp4")
+default_font = ExtResource("2_pwdki")
 default_font_size = 24
 
 [node name="StartScreen" type="Control"]
@@ -39,6 +39,6 @@ script = ExtResource("2_nm2pk")
 [node name="Timer" type="Timer" parent="StartInstruction"]
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ykf7h")
+stream = ExtResource("4_2svgn")
 volume_db = -7.5
 autoplay = true
