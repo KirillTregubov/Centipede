@@ -1,23 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://drk4s6echqcof"]
+[gd_scene load_steps=8 format=3 uid="uid://drk4s6echqcof"]
 
 [ext_resource type="Script" path="res://scenes/main/CurrentScene.gd" id="1_skha6"]
 [ext_resource type="PackedScene" uid="uid://pb8alr1dib1w" path="res://scenes/start/start.tscn" id="1_ursxe"]
 [ext_resource type="PackedScene" uid="uid://xu8645aeqbpe" path="res://scenes/level/level.tscn" id="1_visgx"]
-
-[sub_resource type="Animation" id="Animation_aifly"]
-resource_name = "fade_to_black"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Transition/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_3e4fx"]
 length = 0.001
@@ -34,10 +19,41 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_aifly"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_puatp"]
+resource_name = "fade_to_normal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y61y6"]
 _data = {
 "RESET": SubResource("Animation_3e4fx"),
-"fade_to_black": SubResource("Animation_aifly")
+"fade_to_black": SubResource("Animation_aifly"),
+"fade_to_normal": SubResource("Animation_puatp")
 }
 
 [node name="Main" type="Node2D"]
@@ -62,7 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="TransitionPlayer" type="AnimationPlayer" parent="Transition"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_y61y6")
@@ -70,3 +86,4 @@ libraries = {
 
 [connection signal="start_game" from="CurrentScene" to="CurrentScene" method="_on_start_game"]
 [connection signal="start_game" from="CurrentScene" to="UI/StartScreen" method="_on_start_game"]
+[connection signal="game_loaded" from="UI/StartScreen" to="CurrentScene" method="_on_start_screen_game_loaded"]
