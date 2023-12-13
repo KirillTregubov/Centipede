@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lpxrrm2r7ynv"
-path="res://.godot/imported/bugblaster16.png-5df5bde29b9ae23e9ed98d5e8763e17d.ctex"
+uid="uid://oymbkye0hpq4"
+path="res://.godot/imported/bullet.png-2c7ba26ddbc560ce1efdc1dd98291e68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/bugblaster16.png"
-dest_files=["res://.godot/imported/bugblaster16.png-5df5bde29b9ae23e9ed98d5e8763e17d.ctex"]
+source_file="res://assets/art/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-2c7ba26ddbc560ce1efdc1dd98291e68.ctex"]
 
 [params]
 

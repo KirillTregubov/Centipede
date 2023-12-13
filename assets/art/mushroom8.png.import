@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjvik44crttod"
-path="res://.godot/imported/SpriteSheet.png-aa288cdcab745a5478af518b5eb7ef6d.ctex"
+uid="uid://db7yf7mdp3tfs"
+path="res://.godot/imported/mushroom8.png-7156fc76734ce499677374026c6db42d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/level/SpriteSheet.png"
-dest_files=["res://.godot/imported/SpriteSheet.png-aa288cdcab745a5478af518b5eb7ef6d.ctex"]
+source_file="res://assets/art/mushroom8.png"
+dest_files=["res://.godot/imported/mushroom8.png-7156fc76734ce499677374026c6db42d.ctex"]
 
 [params]
 
