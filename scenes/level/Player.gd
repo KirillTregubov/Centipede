@@ -5,7 +5,11 @@ const SPEED = 400.0
 
 var BulletScene : PackedScene = preload("res://scenes/bullet/bullet.tscn")
 
-func _process(delta):
+func _ready():
+	Engine.set_time_scale(0.1)
+
+
+func _process(_delta):
 	if not get_parent().has_node("Bullet") and Input.is_action_pressed("shoot"):
 		shoot()
 
@@ -24,16 +28,18 @@ func _physics_process(_delta):
 		velocity.y = 0 #move_toward(velocity.y, 0, SPEED)
 	
 	velocity = velocity.limit_length(SPEED)
-
+	
 	move_and_slide()
+	
+	#if (get_parent().has_node("Bullet")):
+		#var bullet = get_parent().get_node("Bullet")
+		#if (bullet.position.y >= self.position.y - 16):
+			#print_debug('bad update')
+			#bullet.transform.origin.x = self.position.x
+
 
 func shoot():
 	# Create a new instance of the bullet scene
 	var bullet = BulletScene.instantiate()
-
-	# Set the bullet's position to the player's position
 	bullet.position = self.position
-	#bullet.position.x -= 16
-
-	# Add the bullet to the scene tree
 	get_parent().add_child(bullet)
