@@ -1,13 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://xu8645aeqbpe"]
+[gd_scene load_steps=40 format=3 uid="uid://xu8645aeqbpe"]
 
 [ext_resource type="PackedScene" uid="uid://b7b068nha1hmy" path="res://scenes/control.tscn" id="1_2k35c"]
 [ext_resource type="Script" path="res://scenes/level/Player.gd" id="1_uooct"]
 [ext_resource type="Texture2D" uid="uid://bjvik44crttod" path="res://scenes/level/SpriteSheet.png" id="2_3cx0y"]
-[ext_resource type="Texture2D" uid="uid://2u8ox1lf7r5b" path="res://assets/art/bugblaster16.png" id="2_ugj68"]
-[ext_resource type="Texture2D" uid="uid://c66b10qxi4lc4" path="res://assets/art/mushroom16_1.png" id="5_41sbg"]
+[ext_resource type="Texture2D" uid="uid://lpxrrm2r7ynv" path="res://assets/art/bugblaster16.png" id="2_ugj68"]
 [ext_resource type="Texture2D" uid="uid://b1j2c5cxqj2up" path="res://assets/art/mushroom16.png" id="6_0al5d"]
-[ext_resource type="Texture2D" uid="uid://vbc2b8jxmloo" path="res://assets/art/mushroom.png" id="9_f5hfk"]
-[ext_resource type="Texture2D" uid="uid://c5fdytkg1dn3m" path="res://assets/art/bugblaster16_2.png" id="10_8xm8m"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7gtb6"]
 b = Vector2(480, 0)
@@ -16,8 +13,8 @@ b = Vector2(480, 0)
 b = Vector2(0, 96)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_w1dkf"]
-a = Vector2(0, 96)
-b = Vector2(480, 96)
+a = Vector2(0, 96.5)
+b = Vector2(480, 96.5)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rvkvj"]
 a = Vector2(480, 0)
@@ -228,8 +225,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_347vm"]
-radius = 5.0
-height = 14.0
+radius = 7.0
+height = 16.0
 
 [node name="Level" type="Node2D"]
 
@@ -248,8 +245,46 @@ shape = SubResource("SegmentShape2D_w1dkf")
 [node name="Right" type="CollisionShape2D" parent="PlayableArea"]
 shape = SubResource("SegmentShape2D_rvkvj")
 
+[node name="Control" parent="." instance=ExtResource("1_2k35c")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(128, 408)
+texture = ExtResource("6_0al5d")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(128, 424)
+texture = ExtResource("6_0al5d")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(128, 440)
+texture = ExtResource("6_0al5d")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(128, 456)
+texture = ExtResource("6_0al5d")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(128, 472)
+texture = ExtResource("6_0al5d")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(128, 488)
+texture = ExtResource("6_0al5d")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(193, 8)
+texture = ExtResource("6_0al5d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(135, 8)
+texture = ExtResource("2_ugj68")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(151, 8)
+texture = ExtResource("2_ugj68")
+
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(255, 450)
+position = Vector2(258, 451)
 motion_mode = 1
 script = ExtResource("1_uooct")
 
@@ -258,27 +293,9 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_nx247")
 frame = 26
 
-[node name="Sprite2D7" type="Sprite2D" parent="Player"]
-texture = ExtResource("10_8xm8m")
-
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-visible = false
+position = Vector2(1, 0)
 texture = ExtResource("2_ugj68")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_347vm")
-
-[node name="Control" parent="." instance=ExtResource("1_2k35c")]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(128, 408)
-texture = ExtResource("6_0al5d")
-
-[node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(144, 378)
-scale = Vector2(2, 2)
-texture = ExtResource("9_f5hfk")
-
-[node name="Sprite2D7" type="Sprite2D" parent="."]
-position = Vector2(242, 451)
-texture = ExtResource("5_41sbg")
