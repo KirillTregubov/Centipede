@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b7b068nha1hmy" path="res://scenes/ui/ui.tscn" id="1_afsgy"]
 [ext_resource type="Script" path="res://scenes/level/Player.gd" id="1_uooct"]
-[ext_resource type="Texture2D" uid="uid://vbc2b8jxmloo" path="res://assets/art/mushroom.png" id="2_15ii6"]
+[ext_resource type="PackedScene" uid="uid://cjv4bqwfijbc1" path="res://scenes/mushroom/mushroom.tscn" id="5_3fivq"]
 [ext_resource type="Texture2D" uid="uid://b4b038rl1xctp" path="res://assets/art/bugblaster.png" id="5_bha7o"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7gtb6"]
@@ -43,29 +43,8 @@ shape = SubResource("SegmentShape2D_rvkvj")
 
 [node name="UI" parent="." instance=ExtResource("1_afsgy")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Mushroom3" parent="." instance=ExtResource("5_3fivq")]
 position = Vector2(128, 408)
-texture = ExtResource("2_15ii6")
-
-[node name="Sprite2D7" type="Sprite2D" parent="."]
-position = Vector2(128, 424)
-texture = ExtResource("2_15ii6")
-
-[node name="Sprite2D8" type="Sprite2D" parent="."]
-position = Vector2(128, 440)
-texture = ExtResource("2_15ii6")
-
-[node name="Sprite2D9" type="Sprite2D" parent="."]
-position = Vector2(128, 456)
-texture = ExtResource("2_15ii6")
-
-[node name="Sprite2D10" type="Sprite2D" parent="."]
-position = Vector2(128, 472)
-texture = ExtResource("2_15ii6")
-
-[node name="Sprite2D11" type="Sprite2D" parent="."]
-position = Vector2(128, 488)
-texture = ExtResource("2_15ii6")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(258, 451)
@@ -78,3 +57,9 @@ texture = ExtResource("5_bha7o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_347vm")
+
+[node name="Mushroom" parent="." instance=ExtResource("5_3fivq")]
+position = Vector2(328, 328)
+
+[node name="Mushroom2" parent="." instance=ExtResource("5_3fivq")]
+position = Vector2(344, 328)

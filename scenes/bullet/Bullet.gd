@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Bullet
 
 const SPEED = 850.0
 
@@ -12,20 +13,21 @@ func _ready():
 	assert(player)
 	self.get_parent().move_child(self, 0)
 	self.position.y -= 6
-	offset = self.position.y - 16
-
+	self.position.x = player.position.x
+	#offset = self.position.y - 16
+	
 	apply_impulse(Vector2(0, -SPEED))
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	# Check if the bullet's position is outside of the viewport
-	if position.y < offset - 50 or position.y < 16:
+	if position.y < 16: #  position.y < offset - 100 or 
 		queue_free()
 
 
-func _integrate_forces(state: PhysicsDirectBodyState2D):
-	var position = state.transform.origin
-	if (position.y >= offset):
-		final_position_x = player.position.x + (player.velocity.x * state.step)
-
-	state.transform.origin.x = final_position_x
+#func _on_body_entered(body: Node) -> void:
+	#print_debug(body)
+	#if (body is CollisionObject2D):
+		#print_debug(body.collision_layer)
+	##if (body.get_collision_layer()):
+		##print_debug('is shroom')

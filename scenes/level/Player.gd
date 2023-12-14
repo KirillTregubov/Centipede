@@ -5,6 +5,10 @@ const SPEED = 400.0
 
 var BulletScene : PackedScene = preload("res://scenes/bullet/bullet.tscn")
 
+#NOTE: debug
+#func _ready():
+	#Engine.set_time_scale(0.5)
+
 
 func _process(_delta):
 	if not get_parent().has_node("Bullet") and Input.is_action_pressed("shoot"):
@@ -28,6 +32,11 @@ func _physics_process(_delta):
 	velocity = velocity.limit_length(SPEED)
 	
 	move_and_slide()
+	
+	if (get_parent().has_node('Bullet')):
+		var bullet = get_parent().get_node('Bullet') as Bullet
+		if (bullet.position.y >= position.y - 24):
+			bullet.global_transform.origin.x = position.x
 
 
 func shoot():
