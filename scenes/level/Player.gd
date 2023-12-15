@@ -5,14 +5,16 @@ const SPEED = 450.0
 var old_x_pos: int = 0
 var showing_placeholder : bool = false
 
-var BulletScene : PackedScene = preload("res://scenes/bullet/bullet.tscn")
+const BulletScene : PackedScene = preload("res://scenes/bullet/bullet.tscn")
 @onready var placeholder_bullet: Sprite2D = $PlaceholderBullet
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 #NOTE: debug
-#func _ready():
-	#pass
+func _ready():
+	position.y = (Global.ROWS) * 16 + 8
+	position.x = (Global.COLS / 2) * 16
+
 	#max_slides = 0
 	#Engine.set_time_scale(0.5)
 

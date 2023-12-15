@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6fh7hgycgggc"]
+
+[ext_resource type="PackedScene" uid="uid://cjv4bqwfijbc1" path="res://scenes/mushroom/mushroom.tscn" id="1_skj2b"]
+
+[node name="Backup" type="Node2D"]
+
+[node name="Mushroom" parent="." instance=ExtResource("1_skj2b")]
+position = Vector2(328, 328)
+
+[node name="Mushroom2" parent="." instance=ExtResource("1_skj2b")]
+position = Vector2(344, 328)
+
+[node name="Mushroom3" parent="." instance=ExtResource("1_skj2b")]
+position = Vector2(128, 440)
+
+[node name="Mushroom4" parent="." instance=ExtResource("1_skj2b")]
+position = Vector2(328, 392)
+
+[node name="Mushroom5" parent="." instance=ExtResource("1_skj2b")]
+position = Vector2(344, 392)
