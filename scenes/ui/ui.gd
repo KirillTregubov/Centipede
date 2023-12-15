@@ -18,8 +18,7 @@ func add_life():
 	LifeContainer.add_child(texture)
 
 
-func update_score(score: int):
-	assert(score >= 0 and score <= 99999999)
+func _on_score_change(score: int):
 	var newScore = str(score)
 	ScoreNode.text = '0' + newScore if score < 10 else newScore
 
@@ -34,7 +33,7 @@ func update_high_score(score: int):
 func _ready():
 	for n in STARTING_LIVES:
 		add_life()
-	update_score(0)
+	Global.score_changed.connect(_on_score_change)
 	update_high_score(0)
 
 

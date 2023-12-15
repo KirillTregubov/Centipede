@@ -9,6 +9,7 @@ var health: int = MAX_HEALTH
 func take_damage():
 	health -= 1
 	if (health == 0):
+		Global.score += 1
 		queue_free()
 	sprite.frame += 1
 

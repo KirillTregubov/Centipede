@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const ACCELERATION = 100.0
-const SPEED = 400.0
+const ACCELERATION = 150.0
+const SPEED = 450.0
 var old_x_pos: int = 0
 var showing_placeholder : bool = false
 

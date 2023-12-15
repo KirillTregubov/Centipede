@@ -15,6 +15,10 @@ config/version="0.1.0"
 run/main_scene="res://scenes/level/level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
+[autoload]
+
+Global="*res://autoload/Global.gd"
+
 [display]
 
 window/size/viewport_width=480
