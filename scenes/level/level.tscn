@@ -101,6 +101,7 @@ motion_mode = 1
 script = ExtResource("1_uooct")
 
 [node name="PlaceholderBullet" type="Sprite2D" parent="Player"]
+visible = false
 texture = ExtResource("3_t1psr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]

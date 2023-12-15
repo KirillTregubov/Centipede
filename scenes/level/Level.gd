@@ -9,10 +9,10 @@ func add_mushroom(row: int, col: int) -> bool:
 	var target_position = Vector2(col * 16 + 8, row * 16 + Global.ROW_OFFSET + 8)
 	var parameters = PhysicsPointQueryParameters2D.new()
 	parameters.position = target_position
+	parameters.collision_mask = 0b00000000_00000000_00000000_00000100
 	var result = get_world_2d().direct_space_state.intersect_point(parameters)
-	for hit in result:
-		if hit.collider.is_in_group("Mushroom"):
-			return false
+	if (len(result) > 0):
+		return false
 
 	var newMushroom = MUSHROOM.instantiate()
 	newMushroom.set_position(target_position)
