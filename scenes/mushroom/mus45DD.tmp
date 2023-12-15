@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cjv4bqwfijbc1"]
 
 [ext_resource type="Texture2D" uid="uid://vbc2b8jxmloo" path="res://assets/art/mushroom.png" id="1_8au6r"]
-[ext_resource type="Script" path="res://scenes/mushroom/Mushroom.gd" id="1_oeqfo"]
 [ext_resource type="Texture2D" uid="uid://cnhn1d7raaxf4" path="res://assets/art/mushroom_single.png" id="2_btb6w"]
+[ext_resource type="Script" path="res://scenes/mushroom/Collision.gd" id="3_katog"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uaw15"]
 atlas = ExtResource("1_8au6r")
@@ -46,25 +46,27 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r35cw"]
 size = Vector2(4, 2)
 
-[node name="Mushroom" type="Node2D" groups=["Mushroom"]]
-script = ExtResource("1_oeqfo")
+[node name="Mushroom" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Mushroom"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gpv07")
 
-[node name="Sprite2D" type="Sprite2D" parent="." groups=["Mushroom"]]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("2_btb6w")
 
-[node name="StaticBody" type="StaticBody2D" parent="." groups=["Mushroom"]]
+[node name="CollisionArea" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 14
+script = ExtResource("3_katog")
 
-[node name="GeneralCollision" type="CollisionShape2D" parent="StaticBody" groups=["Mushroom"]]
+[node name="CollisionShape" type="CollisionShape2D" parent="CollisionArea"]
 shape = SubResource("RectangleShape2D_pw8kx")
 
-[node name="PlayerStaticBody" type="StaticBody2D" parent="." groups=["Mushroom"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="PlayerStaticBody" groups=["Mushroom"]]
+[node name="CollisionShape" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_r35cw")
+
+[connection signal="body_entered" from="CollisionArea" to="CollisionArea" method="_on_body_entered"]

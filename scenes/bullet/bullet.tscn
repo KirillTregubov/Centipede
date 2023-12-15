@@ -12,6 +12,8 @@ collision_layer = 2
 collision_mask = 12
 gravity_scale = 0.0
 continuous_cd = 1
+max_contacts_reported = 10
+contact_monitor = true
 script = ExtResource("1_lcv5w")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Bullet"]]
@@ -19,3 +21,5 @@ texture = ExtResource("2_8n3k5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Bullet"]]
 shape = SubResource("CapsuleShape2D_igw8w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
