@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://byy5xjvvgra55"]
+
+[sub_resource type="SkeletonModification2D" id="SkeletonModification2D_ko17f"]
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_p07y5"]
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification2D_ko17f")
+
+[node name="Centipede" type="Node2D"]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+modification_stack = SubResource("SkeletonModificationStack2D_p07y5")
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(27, 17)

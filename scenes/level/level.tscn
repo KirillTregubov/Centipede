@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://xu8645aeqbpe"]
+[gd_scene load_steps=15 format=3 uid="uid://xu8645aeqbpe"]
 
 [ext_resource type="PackedScene" uid="uid://b7b068nha1hmy" path="res://scenes/ui/ui.tscn" id="1_afsgy"]
 [ext_resource type="Script" path="res://scenes/level/Level.gd" id="1_cqiyp"]
 [ext_resource type="Script" path="res://scenes/level/Player.gd" id="1_uooct"]
 [ext_resource type="Texture2D" uid="uid://oymbkye0hpq4" path="res://assets/art/bullet.png" id="3_t1psr"]
 [ext_resource type="Texture2D" uid="uid://b4b038rl1xctp" path="res://assets/art/bugblaster.png" id="5_bha7o"]
+[ext_resource type="PackedScene" uid="uid://byy5xjvvgra55" path="res://scenes/centipede/centipede.tscn" id="6_r0s18"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7gtb6"]
 b = Vector2(480, 0)
@@ -116,3 +117,6 @@ libraries = {
 "": SubResource("AnimationLibrary_kfllj")
 }
 autoplay = "show_bullet"
+
+[node name="Centipede" parent="." instance=ExtResource("6_r0s18")]
+position = Vector2(85, 64)
