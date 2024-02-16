@@ -1,15 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://byy5xjvvgra55"]
+[gd_scene load_steps=4 format=3 uid="uid://byy5xjvvgra55"]
 
-[sub_resource type="SkeletonModification2D" id="SkeletonModification2D_ko17f"]
-
-[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_p07y5"]
-modification_count = 1
-modifications/0 = SubResource("SkeletonModification2D_ko17f")
+[ext_resource type="Script" path="res://scenes/centipede/Centipede.gd" id="1_au5il"]
+[ext_resource type="PackedScene" uid="uid://dvreaiw6u1tqy" path="res://scenes/centipede/centipede_head.tscn" id="1_hrt4b"]
+[ext_resource type="PackedScene" uid="uid://b7l2segvoc2yi" path="res://scenes/centipede/centipede_body.tscn" id="3_rug4y"]
 
 [node name="Centipede" type="Node2D"]
+script = ExtResource("1_au5il")
 
-[node name="Skeleton2D" type="Skeleton2D" parent="."]
-modification_stack = SubResource("SkeletonModificationStack2D_p07y5")
+[node name="CentipedeHead" parent="." instance=ExtResource("1_hrt4b")]
 
-[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
-position = Vector2(27, 17)
+[node name="CentipedeBody" parent="." instance=ExtResource("3_rug4y")]
+position = Vector2(-16, 0)

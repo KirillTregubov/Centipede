@@ -30,11 +30,16 @@ func generate_mushrooms(num_mushrooms: int):
 			generated += 1
 
 
+func spawn_centipede():
+	print_debug('centipede')
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var num_mushrooms = randi() % 16 + 35
 	print_debug('Generating ', num_mushrooms, ' mushrooms...')
 	generate_mushrooms(num_mushrooms)
+	spawn_centipede()
 	print_debug('done')
 
 

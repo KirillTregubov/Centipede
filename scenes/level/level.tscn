@@ -119,4 +119,4 @@ libraries = {
 autoplay = "show_bullet"
 
 [node name="Centipede" parent="." instance=ExtResource("6_r0s18")]
-position = Vector2(85, 64)
+position = Vector2(85, 24)

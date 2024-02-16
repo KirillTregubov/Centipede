@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7l2segvoc2yi"]
+
+[ext_resource type="Texture2D" uid="uid://dpar5t5jvqkvn" path="res://assets/art/centipede_body.png" id="1_qsdmw"]
+
+[node name="CentipedeBody" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qsdmw")
